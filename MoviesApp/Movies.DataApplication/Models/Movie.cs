@@ -18,6 +18,8 @@ namespace Movies.DataApplication.Models
 
         public MovieFormat MovieFormat { get; set; }
 
+        public int? DirectorId { get; set; }
+
         //Navigation Property:
         public virtual Director? Director { get; set; }
 

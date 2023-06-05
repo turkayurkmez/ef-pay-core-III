@@ -14,6 +14,9 @@ namespace Movies.DataApplication.Data
         public DbSet<Director> Directors { get; set; }
         public DbSet<Cast> Casts { get; set; }
         public DbSet<Genre> Genres { get; set; }
+
+        public DbSet<Comment> Comment { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Movie>().Property(p => p.Name).IsRequired()

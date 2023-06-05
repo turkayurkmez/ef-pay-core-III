@@ -153,6 +153,59 @@ namespace MoviesApp.Controllers
 
         }
 
+        [HttpGet("[action]")]
+        public async Task<IActionResult> JoinWithLinq()
+        {
+            //var query = from movie in _context.Movies
+            //            join comment in _context.Set<Comment>()
+            //            on movie.Id equals comment.MovieId
+            //            select new { movie.Name, comment.CommentBody };
+
+            // var comments = _context.Set<Comment>();
+            //var query = _context.Movies.Join(
+            //     _context.Directors,
+            //     movie => movie.DirectorId,
+            //     director => director.Id,
+            //     (movie, director) => new { MovieTitle = movie.Name, DirectorName = director.Name }
+            //    );
+
+            var query = from movie in _context.Movies
+                        join comments in _context.Comment
+                        on movie.Id equals comments.MovieId into grouping
+                        select new { Name = movie.Name, CommentsCount = grouping.Count() };
+
+
+            return Ok(query);
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GroupByWithLinq()
+        {
+            //var query = from movie in _context.Movies
+            //            join comment in _context.Set<Comment>()
+            //            on movie.Id equals comment.MovieId
+            //            select new { movie.Name, comment.CommentBody };
+
+            // var comments = _context.Set<Comment>();
+            //var query = _context.Movies.Join(
+            //     _context.Directors,
+            //     movie => movie.DirectorId,
+            //     director => director.Id,
+            //     (movie, director) => new { MovieTitle = movie.Name, DirectorName = director.Name }
+            //    );
+
+            var query = _context.Movies.Join(_context.Comment, m => m.Id, c => c.MovieId, (movie, comment) => new { movie.Name, comment.CommentBody })
+
+                .GroupBy(
+                 gr => gr.Name,
+                 movie => new { Name = movie.Name, movie.CommentBody },
+                 (key, collection) => new { key, TotalCount = collection.Count() }
+
+                );
+
+            return Ok(query);
+        }
+
         private static string getDataForRating(double? rating)
         {
             return $"Bu filmin puanı: {rating} ";
