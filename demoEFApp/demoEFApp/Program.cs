@@ -4,7 +4,17 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            //Console.WriteLine("veritabanı oluşturuluyor.....");
+            //Commands.CreateDatabaseAndAfterSeed(true);
+            //Console.WriteLine("db oluşturuldu");
+
+            Commands.ListProducts();
+            // Commands.AddNewProductToCategory();
+            Console.WriteLine("Fiyat değiştiriliyor.....");
+            Commands.ChangeProductPrice();
+            Commands.ListProducts();
+
+
         }
     }
 }
