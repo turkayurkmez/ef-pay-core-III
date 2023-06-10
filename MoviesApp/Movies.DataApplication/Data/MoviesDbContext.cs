@@ -22,6 +22,8 @@ namespace Movies.DataApplication.Data
             modelBuilder.Entity<Movie>().Property(p => p.Name).IsRequired()
                                                               .HasMaxLength(100);
 
+            modelBuilder.Entity<Movie>().HasQueryFilter(m => !m.IsDeleted);
+
             modelBuilder.Entity<Movie>()
                         .Property(m => m.MovieFormat)
                         .HasConversion(
@@ -45,6 +47,9 @@ namespace Movies.DataApplication.Data
                                        .WithOne(cm => cm.Cast)
                                        .HasForeignKey(cm => cm.CastId)
                                        .OnDelete(DeleteBehavior.NoAction);
+
+
+            modelBuilder.Entity<Genre>().HasQueryFilter(g => g.Movies.Count > 0);
 
 
             var bradPitt = new Cast { Id = 1, Name = "Brad Pitt" };

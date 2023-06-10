@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "usingNhibernate", "usingNhibernate\usingNhibernate.csproj", "{D2F9BD00-6046-4465-8A94-249029086FF2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "usingNhibernate", "usingNhibernate\usingNhibernate.csproj", "{D943D715-A334-426A-A88D-EC3913B0EA38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D2F9BD00-6046-4465-8A94-249029086FF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D2F9BD00-6046-4465-8A94-249029086FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D2F9BD00-6046-4465-8A94-249029086FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D2F9BD00-6046-4465-8A94-249029086FF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D943D715-A334-426A-A88D-EC3913B0EA38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D943D715-A334-426A-A88D-EC3913B0EA38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D943D715-A334-426A-A88D-EC3913B0EA38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D943D715-A334-426A-A88D-EC3913B0EA38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1ECF2381-CC5E-47BB-9CA6-3E96062BE91F}
+		SolutionGuid = {363DEAEE-2569-4568-BE7A-85D39E32DC1E}
 	EndGlobalSection
 EndGlobal

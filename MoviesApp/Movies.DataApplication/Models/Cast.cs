@@ -1,6 +1,6 @@
 ﻿namespace Movies.DataApplication.Models
 {
-    public class Cast
+    public class Cast : IEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }

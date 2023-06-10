@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Movies.DataApplication.Models
 {
     //[Table("Filmler")]
-    public class Movie
+    public class Movie : IEntity
     {
         public int Id { get; set; }
         [Required]
@@ -30,6 +31,8 @@ namespace Movies.DataApplication.Models
         //[NotMapped]
         //public bool IsAvailable { get; set; }
         public ICollection<Comment>? Comments { get; set; }
+        [NotMapped]
+        public byte[]? RowVersion { get; set; }
 
     }
 
